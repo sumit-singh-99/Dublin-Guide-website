@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContactUsForAnyQuery</title>
+    <link rel="stylesheet" href="style5.css" />
+  </head>
+  <body>
+    <div class="button">
+        <a href="index.html" class="btn">Back to Home</a>
+      </div>
+    <h2 style="position: absolute; top: 10px; text-align: center;">This is the query form</h2>
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form id="queryForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("queryForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+           
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let subject = document.getElementById("subject").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            
+            if (name === "" || email === "" || subject === "" || message === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            
+            alert("Thank you, " + name + "! Your query has been submitted.");
+            
+           
+            document.getElementById("queryForm").reset();
+        });
+    </script>
+    </div>
+  </body>
+</html>
